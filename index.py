@@ -45,13 +45,12 @@ def div_num(a,b):#function for division
 #print("The division is",div_num(num1,num2))#call the function
 
 #Calculator
+while True:
+    Operator = input("Select Operation:")
 
-print("Select Operation: +, -, *, /")
-Operator = Input("Enter the operator: ")
-
-if choice in ('+', '-', '*', '/'):
-    num1 = int(input("Enter first number: "))
-    num2 = int(input("Enter second number: "))
+    if Operator in ('+','-','*','/'):
+        num1 = int(input("Enter first number: "))
+        num2 = int(input("Enter second number: "))
     if Operator == '+':
         print(num1, "+", num2, "=", add_num(num1, num2))
     elif Operator == '-':
@@ -61,5 +60,5 @@ if choice in ('+', '-', '*', '/'):
     elif Operator == '/':
         print(num1, "/", num2, "=", div_num(num1, num2))
     else:
-        print("Invalid operator")
+        print("Invalid operator: Try + for addition, - for subtraction, * for multiplication, / for division")
 
