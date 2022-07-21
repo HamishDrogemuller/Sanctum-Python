@@ -1,6 +1,7 @@
 hello = "hello world"
 print(hello)
 
+#-------------------------------------------------------
 #Addition Function
 
 def add_num(a,b):#function for addition
@@ -11,6 +12,7 @@ def add_num(a,b):#function for addition
 
 #print("The sum is",add_num(num1,num2))#call the function
 
+#------------------------------------------------------
 #Subtraction Function
 
 def sub_num(a,b):#function for subtraction
@@ -22,6 +24,7 @@ def sub_num(a,b):#function for subtraction
 
 #print("The subtraction is",sub_num(num1,num2))#call the function
 
+#------------------------------------------------------
 #Multiplication Function
 
 def mul_num(a,b):#function for multiplication
@@ -33,6 +36,7 @@ def mul_num(a,b):#function for multiplication
 
 #print("The multiplication is",mul_num(num1,num2))#call the function
 
+#------------------------------------------------------
 #Division Function
 
 def div_num(a,b):#function for division
@@ -44,6 +48,7 @@ def div_num(a,b):#function for division
 
 #print("The division is",div_num(num1,num2))#call the function
 
+#------------------------------------------------------
 #Calculator
 while True:
     Operator = input("Select Operation:")
