@@ -1,3 +1,9 @@
+import os
+
+
+import os
+from collections import defaultdict
+
 """
 Python Playground
 """
@@ -70,8 +76,55 @@ while True:
         print(num1, "/", num2, "=", div_num(num1, num2))
     else:
         print("Invalid operator: Try + for addition, - for subtraction, * for multiplication, / for division")
-
+    print("Do you want to continue? (y/n)")
+    if input() == 'n':
+        break
 
 
 #Class Examples
+
+#Dictionary
+animals = {
+    'a': 'aardvark',
+    'b': 'baboon',
+    'c': 'coati'
+}
+
+print(animals['a'])
+
+animals['d'] = 'donkey'
+
+animals2 = {
+    'a': ['aardvark', 'antelope'],
+    'b': ['baboon', 'boar'],
+}
+animals2['b'].append('buffalo')
+
+animals2['c'] = ['coati', 'cobra']
+
+if 'c' not in animals2:
+    animals2['c'] = []
+
+animals2['c'].append('camel')
+
+animals3 = defaultdict(list)
+
+#dict
+animals3['e'].append('elephant')
+
+#lists
+myList = [1,2,3,4,5]
+[2*item for item in myList]
+
+myList2 = list(range(100))
+filteredList = [item for item in myList2 if item % 2 == 0]
+
+print(filteredList)
+
+myString = 'my name is HCStrix. I live in NZ'
+myString.split('.')
+
+def cleanWord(word):
+    return word.replace('.', '').lower()
+
 
