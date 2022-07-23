@@ -127,4 +127,4 @@ myString.split('.')
 def cleanWord(word):
     return word.replace('.', '').lower()
 
-
+[cleanWord(word) for word in myString.split()]
