@@ -1,6 +1,9 @@
 import os
 from collections import defaultdict
 from datetime import datetime
+import threading
+import time
+from multiprocessing import Process
 
 """
 Python Playground
@@ -179,4 +182,71 @@ while datetime.now().second != wait_until:
     pass
 
 print(f'We are at {wait_until} seconds')
+
+#OOP
+
+class dog:
+    def __init__(self, name):
+        self.name = name
+        self.legs = 4
+
+    def bark(self):
+        print(f'{self.name} is barking')
+
+myDog = dog('Fido')
+print(myDog.name)
+print(myDog.legs)
+
+class cat:
+
+    _legs = 4
+
+    def __init__(self, name):
+        self.name = name
+
+    def getLegs(self):
+        return self._legs
+
+    def meow(self):
+        print(f'{self.name} is meowing')
+
+# Exception
+
+class CustomException(Exception):
+    pass    
+
+def causeError():
+    raise CustomException('You called causeError Function')
+
+#Threading
+
+def longSquare(num, results):
+    time.sleep(1)
+    results[num] = num**2
+
+results = {}
+
+t1 = threading.Thread(target=longSquare, args=(1,))
+t2 = threading.Thread(target=longSquare, args=(2,))
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+print(results)
+
+
+def longSquare(num, results):
+    time.sleep(1)
+    results[num] = num**2
+
+results = {}
+threads = [threading.Thread(target=longSquare, args=(n, results)) for n in range(0,10)]
+[t.start() for t in threads]
+[t.join() for t in threads]
+
+print(results)
+
 
