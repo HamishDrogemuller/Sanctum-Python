@@ -1,8 +1,6 @@
 import os
-
-
-import os
 from collections import defaultdict
+from datetime import datetime
 
 """
 Python Playground
@@ -128,3 +126,57 @@ def cleanWord(word):
     return word.replace('.', '').lower()
 
 [cleanWord(word) for word in myString.split()]
+
+[[cleanWord(word) for word in sentence.split()] for sentence in myString.split('.')]
+
+#dictList
+animalList = [('aardvark', 'a'), ('baboon', 'b'), ('coati', 'c')]
+animals = {item[0]: item[1] for item in animalList}
+print('animals')
+
+animals ={key: value for key, value in animalList}
+print('animals')
+
+print('animals.items()')
+
+list(animals.items())
+
+[{'letter': key, 'name': value} for key, value in animals.items()]
+
+#IF and Else Statements
+for n in range(1,101):
+    if n % 15 == 0:
+        print('fizzbuzz')
+    else:
+        if n % 3 == 0:
+            print('fizz')
+        else:
+            if n % 5 == 0:
+                print('buzz')
+            else:
+                print(n)
+
+#ElIF Statements
+for n in range(1,101):
+    if n % 15 == 0:
+        print('fizzbuzz')
+    elif n % 3 == 0:
+        print('fizz')
+    elif n % 5 == 0:
+        print('buzz')
+    else:
+        print(n)
+
+#ternary
+n = 10
+
+fizzBuzz = 'Fizz' if n % 3 ==0 else n
+
+#While
+wait_until = datetime.now().second + 2
+
+while datetime.now().second != wait_until:
+    pass
+
+print(f'We are at {wait_until} seconds')
+
