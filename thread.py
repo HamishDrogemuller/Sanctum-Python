@@ -7,7 +7,6 @@ def Hi():
         print('Hi')
         i = i + 1
 
-
 t1 = threading.Thread(target=Hi)
 t2 = threading.Thread(target=Hi)
 
