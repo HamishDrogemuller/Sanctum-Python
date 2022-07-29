@@ -4,6 +4,8 @@ Scans a csv file redirected into the script
 """
 import sys as sys
 import argparse
+import math
+import csv
 
 #Exercise 0 - 
 # 1. Look at the python "argparse", 
@@ -11,26 +13,26 @@ import argparse
 #    Explain how it is set up - see code under "if __name__ == "__main__:"
 # 2. Write out a description of how scan works, 
 def scan(has_header=False):
-    result = []
-    values = []
-    do_header = has_header
-    header_names = {}
+    result = [] # list of dictionaries
+    values = [] # list of values
+    do_header = has_header # boolean
+    header_names = {} # dictionary
     try:
-        for aline in sys.stdin:
-                this_line = aline.strip().split(',')
-                if do_header:
-                    header_names = this_line
-                    do_header = False
-                else:
-                    a_dict = {}
-                    for i in range(0,len(this_line)):
-                        if has_header :
-                            a_dict[header_names[i]]= this_line[i]
-                        else:
-                            a_dict[i]= this_line[i]
+        for aline in sys.stdin: # read in the lines of standard input
+                this_line = aline.strip().split(',') # format line into list of values
+                if do_header: # declare if
+                    header_names = this_line # set header names
+                    do_header = False # set do_header to False
+                else: # else of if
+                    a_dict = {} # create a dictionary
+                    for i in range(0,len(this_line)): # for each value in the line
+                        if has_header : # if a header is present
+                            a_dict[header_names[i]]= this_line[i] # set the value of the dictionary to the value of the line
+                        else: # else of if
+                            a_dict[i]= this_line[i] # set the value of the dictionary to the value of the line
 
-                    result += [a_dict]
-                    values += [this_line]
+                    result += [a_dict] # add the dictionary to the list of dictionaries
+                    values += [this_line] # add the values to the list of values
     except:
         print("Unexpected error:", sys.exc_info()[0])
         return result,values
@@ -43,7 +45,8 @@ def sum_of(column_name, a_list_of_dictionary):
     Return one value that is the sum of the column 
     column_name of each "row" (dictionary)
     """
-    pass
+
+
 
 #Exercise Two
 def multiple_cols(column_names,a_list_of_dictioinary):
