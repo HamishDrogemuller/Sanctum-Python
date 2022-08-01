@@ -45,6 +45,7 @@ def sum_of(column_name, a_list_of_dictionary):
     Return one value that is the sum of the column 
     column_name of each "row" (dictionary)
     """
+    sum(item[column_name] for item in a_list_of_dictioinary)
 
 
 
